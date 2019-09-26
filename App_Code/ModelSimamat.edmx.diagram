@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9ad3744e6c84009a1b6f7dbcfe841fb" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.CONTRACTDOCUMENT" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.CONTRACTDOCUMENT_CATEGORY" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.CONTRACTDOCUMENT_ROLE" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.DISCIPLINE" Width="1.5" PointX="6.125" PointY="1.375" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.Employee" Width="1.5" PointX="8.75" PointY="2.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.MAINMENU" Width="1.5" PointX="1.625" PointY="0.625" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.MAINMENU_ROLE_PERMISSION" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.PROJECT" Width="1.5" PointX="3.75" PointY="8.875" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.PROJECTMEMBER" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.ROLE" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.vEMPLOYEE" Width="1.5" PointX="5.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.vEMPLOYEEPASS" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SIMAMAT_DEVModel.vLOGIN" Width="1.5" PointX="10.75" PointY="2.75" />
+        <AssociationConnector Association="SIMAMAT_DEVModel.fk_PROJECTMEMBER_DISCIPLINE" />
+        <AssociationConnector Association="SIMAMAT_DEVModel.FK_MAINMENUROLEPERMISSION_MAINMENU" />
+        <AssociationConnector Association="SIMAMAT_DEVModel.FK_MAINMENUROLEPERMISSION_ROLE" />
+        <AssociationConnector Association="SIMAMAT_DEVModel.FK_PROJECTMEMBER_PROJECT" />
+        <AssociationConnector Association="SIMAMAT_DEVModel.FK_PROJECTMEMBER_ROLE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

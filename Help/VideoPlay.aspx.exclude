@@ -1,0 +1,28 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="VideoPlay.aspx.vb" Inherits="Help_VideoPlay" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td style="padding-top: 10px;" align="center">
+                        <div class="demo-container">
+                            <telerik:RadMediaPlayer RenderMode="Lightweight" ID="rmplVideoTutor" runat="server"
+                                Height="360px" Width="640px" MimeType="video/quicktime">
+                                <PlaylistSettings Mode="Buttons" ButtonsTrigger="MouseDown" />
+                            </telerik:RadMediaPlayer>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

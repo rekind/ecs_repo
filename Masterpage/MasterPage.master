@@ -1,0 +1,188 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="Masterpage_MasterPage" %>
+
+<%@ Register Assembly="msgBox" Namespace="BunnyBear" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="../images/lconMasterLogo.png" rel="shortcut icon" type="image/x-icon" />
+    <title>Material Management System of Rekayasa Industri</title>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Bootstrap -->
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" href="../css/bootstrap.min.css" />--%>
+    <link href="../Stylepage/bootstrap.css" rel="stylesheet" />
+    <!-- Bootstrap responsive -->
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="../css/plugins/jquery-ui/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../css/plugins/jquery-ui/smoothness/jquery.ui.theme.css" />
+    <!-- PageGuide -->
+    <link rel="stylesheet" href="../css/plugins/pageguide/pageguide.css" />
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="../css/plugins/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" href="../css/plugins/fullcalendar/fullcalendar.print.css" media="print" />
+    <!-- chosen -->
+    <link rel="stylesheet" href="../css/plugins/chosen/chosen.css" />
+    <!-- select2 -->
+    <link rel="stylesheet" href="../css/plugins/select2/select2.css" />
+    <!-- icheck -->
+    <link rel="stylesheet" href="../css/plugins/icheck/all.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="../css/themes.css" />
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- Nice Scroll -->
+    <script src="../js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="../js/plugins/jquery-ui/jquery.ui.core.min.js"></script>
+    <script src="../js/plugins/jquery-ui/jquery.ui.widget.min.js"></script>
+    <script src="../js/plugins/jquery-ui/jquery.ui.mouse.min.js"></script>
+    <script src="../js/plugins/jquery-ui/jquery.ui.draggable.min.js"></script>
+    <script src="../js/plugins/jquery-ui/jquery.ui.resizable.min.js"></script>
+    <script src="../js/plugins/jquery-ui/jquery.ui.sortable.min.js"></script>
+    <!-- Touch enable for jquery UI -->
+    <script src="../js/plugins/touch-punch/jquery.touch-punch.min.js"></script>
+    <!-- slimScroll -->
+    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- vmap -->
+    <script src="../js/plugins/vmap/jquery.vmap.min.js"></script>
+    <script src="../js/plugins/vmap/jquery.vmap.world.js"></script>
+    <script src="../js/plugins/vmap/jquery.vmap.sampledata.js"></script>
+    <!-- Bootbox -->
+    <script src="../js/plugins/bootbox/jquery.bootbox.js"></script>
+    <!-- Flot -->
+    <script src="../js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.bar.order.min.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.resize.min.js"></script>
+    <!-- imagesLoaded -->
+    <script src="../js/plugins/imagesLoaded/jquery.imagesloaded.min.js"></script>
+    <!-- PageGuide -->
+    <script src="../js/plugins/pageguide/jquery.pageguide.js"></script>
+    <!-- FullCalendar -->
+    <script src="../js/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!-- Chosen -->
+    <script src="../js/plugins/chosen/chosen.jquery.min.js"></script>
+    <!-- select2 -->
+    <script src="../js/plugins/select2/select2.min.js"></script>
+    <!-- icheck -->
+    <script src="../js/plugins/icheck/jquery.icheck.min.js"></script>
+    <!-- Theme framework -->
+    <script src="../js/eakroko.min.js"></script>
+    <!-- Theme scripts -->
+    <script src="../js/application.min.js"></script>
+    <!-- Theme Responsive -->
+    <link rel="stylesheet" href="../SRM/css/responsive.css" />
+    <script>
+        /* ========================
+               JAM dan TANGGAL
+        ==========================*/
+        function date_time(id) {
+            date = new Date;
+            year = date.getFullYear();
+            month = date.getMonth();
+            months = new Array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+            d = date.getDate();
+            day = date.getDay();
+            days = new Array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu');
+            h = date.getHours();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            m = date.getMinutes();
+            if (m < 10) {
+                m = "0" + m;
+            }
+            s = date.getSeconds();
+            if (s < 10) {
+                s = "0" + s;
+            }
+            result = '' + days[day] + ', ' + d + ' ' + months[month] + ' ' + year +
+                ' <br> ' + h + ':' + m + ':' + s;
+            document.getElementById(id).innerHTML = result;
+            setTimeout('date_time("' + id + '");', '1000');
+            return true;
+        }
+
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div id="navigation">
+
+        <div class="container-fluid">
+            <a href="../Home.aspx" id="brand">MASTER <sup style="font-size: x-small; font-weight: bold; height: 70px; top: -10px;">V2</sup></a>
+            <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-music"></i></a>
+
+            <ul class='main-nav'>
+                <li>
+                    <a href="#">
+                        <i class="icon-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>My Role</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="user">
+                <ul class="icon-nav">
+                    <li class='dropdown'></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="content">
+        <div id="left" style="z-index: 100 !important;">
+            <div class="subnav">
+                <div class="subnav-title">
+                    <a href="#" class='toggle-subnav'><span>Menu</span></a>
+                </div>
+
+                <ul>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Mako/Upload_kontrak.aspx">Upload Dokumen</asp:HyperLink></ul>
+                    <ul>    
+            </div>
+            <div id="main" style="width:1024px;">
+                <div class="container-fluid">
+                    <div class="page-header">
+                    </div>
+                    <form id="form1" runat="server">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <cc1:msgBox ID="MsgBox1" runat="server" />
+                        <div >
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

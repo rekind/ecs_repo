@@ -1,0 +1,13 @@
+﻿
+Partial Class Help_VideoPlay
+    Inherits System.Web.UI.Page
+    Dim db As New SIMAMAT_DEVEntities
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim refid As String = Request.QueryString("REFID")
+        Dim dataurl = (From a In db.DATAREFERENCEs Where a.REF_ID = refid Select a.REF_VALUE)
+        If dataurl.Count > 0 Then
+            rmplVideoTutor.Source = dataurl.FirstOrDefault
+            rmplVideoTutor.HDSource = dataurl.FirstOrDefault
+        End If
+    End Sub
+End Class
